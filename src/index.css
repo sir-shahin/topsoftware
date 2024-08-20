@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "~aos/dist/aos.css";
+@font-face{
+  font-family:product-sans;
+  src:url('../public/product-sans.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+html,body{
+  font-family: product-sans;
+  letter-spacing: 1px;
+  font-size: 17px;
+  margin: 0;
+}
+.intro{
+  background-image: url('../public/images/top-banner.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: 700px;
+}
+@media screen and (min-width:1650px){
+  .intro{
+    background-size: cover;
+    height: 820px;
+  }
+}
+@media screen and (max-width:1200px){
+  .intro{
+    background-size: cover;
+    height: 500px;
+  }
+  .intro svg{
+    width: 70px !important;
+    height: unset;
+  }
+}
+.portfo{
+  background-image: url('../public/images/portfolio-bg.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  min-height: 650px;
+}
+.text-normal{
+  font-size: 14px;
+}
+.background-gradiant{
+  background: linear-gradient(transparent,
+  transparent 30%,
+  #cee3e7 30%,
+  #cee3e7 70%,
+  transparent 70%);
+}
+.purple-abstract-bg{
+  background-image: url('../public/images/purple-abstract-bg.jpg');
+  background-size: cover;
+}
+.form-frame{
+  background-image: url('../public/images/contact-border.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width :1024px){
+  .form-frame{
+    background-image: none;
+  }
+}
+#floating-image{
+  position: absolute;
+  right: 0;
+  top: 40px;
+}
+.contact svg{
+  min-width: 20px;
+}
+.contact .social-media-links svg{
+  min-width: 36px;
+}
+.portfo-card{
+  width: 100%;
+  height: 100%;
+  transform: translate(0);
+  transform-origin:center center;
+  -webkit-transform-origin: center center;
+  transition: width .5s, height .5s, transform .5s;
+}
+.portfo-image{
+  transition: width .5s;
+}
+.card-holder{
+  z-index: 2;
+}
+.expanding{
+  position:fixed;
+  width: 94vw !important;
+  height: inherit !important;
+  min-height: 80vh;
+  background-color: rgba(255,255,255,.96);
+}
+.expanding .portfo-image{
+  width: 100%;
+  margin-bottom: 1.3rem;
+}
+.expanding h3{
+  font-size: 2rem !important;
+}
+.expanding .truncate{
+  white-space:unset !important;
+  overflow:unset !important;
+  line-height: 1em;
+}
+textarea:focus, input:focus{
+  outline: none;
+}
+@media screen and (min-width:992px){
+  .md:max-width-23{
+    max-width:28vw
+  }
+}
+.portfo-card .discriptions{
+  display: none;
+  opacity: 0;
+}
+.portfo-card.expanding .discriptions{
+  display:block;
+  animation: fadeIns 1s linear .5s forwards;
+}
+@keyframes fadeIns{
+  from{
+    opacity:0
+  }
+  to{
+    opacity:1
+  }
+}
